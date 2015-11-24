@@ -16,3 +16,8 @@ want to upload to launchpad or just create a .deb file.
 
 When installed, the `load-initial-data.sh` script will be placed in `/etc/openhim/`
 along with the data if you ever need to run it again.
+
+After the package is installed the user must manually set the following:
+
+* The certificate for the 2 client must be added to the trusted list in
+  the keystore.
