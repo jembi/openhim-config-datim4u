@@ -1,4 +1,4 @@
-Source: openhim-config-<your_project>
+Source: openhim-config-datim
 Maintainer: Ryan Crichton <ryan@jembi.org>
 Section: web
 Priority: optional
@@ -7,9 +7,9 @@ Build-Depends: debhelper (>= 7)
 Homepage: http://www.openhim.org/
 
 
-Package: openhim-config-<your_project>
+Package: openhim-config-datim
 Architecture: amd64
 Depends: openhim-core-js, curl, jq
 Recommends:
-Description: OpenHIM Config for <your_project>
+Description: OpenHIM Config for datim
  Automatically configures the openhim-core server installed by the openhim-core debian package.
