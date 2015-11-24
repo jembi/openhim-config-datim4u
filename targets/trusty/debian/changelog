@@ -1,4 +1,4 @@
-openhim-config-datim (0.1.0-1~trusty) trusty; urgency=low
+openhim-config-datim-node (0.1.0-1~trusty) trusty; urgency=low
 
   * Initial build.
 
