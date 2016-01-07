@@ -1,5 +1,17 @@
 {
-  "Users": [],
+  "Users": [
+    {
+      "email": "mediators@openhim.org",
+      "firstname": "Mediators",
+      "groups": [
+        "admin"
+      ],
+      "passwordAlgorithm": "sha512",
+      "passwordHash": "551f410020a0bf1241736e410ee41cfee3ed170e7bdb473c35450dc4213186b763817e9f84914792983a9536738ebbbb361800ad324a0ddc90db5ba00d128593",
+      "passwordSalt": "6d0be3d8021303ed342a6cbce69e5b53",
+      "surname": "User"
+    }
+  ],
   "Clients": [
     {
       "certFingerprint": "C1:11:36:8B:54:F8:A2:B4:AA:5B:DD:E8:C1:32:6D:1D:CE:C8:C8:E8",
@@ -35,7 +47,7 @@
       "pollingSchedule": null,
       "tcpHost": null,
       "tcpPort": null,
-      "urlPattern": "^/export$",
+      "urlPattern": "^/export.*$",
       "rewriteUrlsConfig": [],
       "addAutoRewriteRules": true,
       "rewriteUrls": false,
