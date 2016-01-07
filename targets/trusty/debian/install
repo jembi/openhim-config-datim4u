@@ -1,1 +1,2 @@
-/etc/openhim
+/etc/*
+/usr/share/*
