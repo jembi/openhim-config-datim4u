@@ -11,6 +11,8 @@ sudo -u openhim /bin/bash /etc/openhim/install_node_4.sh
 
 chown -R openhim:openhim /usr/share/openhim-mediator-file-queue
 chown -R openhim:openhim /usr/share/openhim-mediator-datim
+chown -R openhim:openhim /usr/share/openhim-mediator-adx-csd-mapper
 
 start openhim-mediator-file-queue
 start openhim-mediator-datim
+start openhim-mediator-adx-csd-mapper

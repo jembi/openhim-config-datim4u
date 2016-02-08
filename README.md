@@ -4,9 +4,11 @@ OpenHIM config package - for DATIM Node
 This repo allows you to create a debian package that will automatically
 configure the openhim-core server installed by the openhim-core debian package.
 
-This package will also install the two mediators required by the DATIM project:
-the file-queue mediator which allows async operations of the ADX request and the
-DATIM mediator which orchestrates the DATIM transaction.
+This package will also install the three mediators required by the DATIM project:
+the file-queue mediator which allows async operations of the ADX request, the
+DATIM mediator which orchestrates the DATIM transaction and a site mapping
+mediator which reconciles local site IDs to global site IDs using the
+Inter Linked Registry that contains site details.
 
 It has been configured specifically for the DATIM project. If you would like to
 create a config package for the OpenHIM for your own project, then
@@ -37,6 +39,7 @@ After the package is installed the user must manually set the following:
 * The /tls folder of the openhim DATIM mediator will need to be updated with its
   proper cert and key file and a ca file for the Global IL.
 * The CSD channel's route will need to be updated to point to the Global IL.
+* The mapping mediator will need to be configured with the location of the ILR.
 
 Building the package
 --------------------
