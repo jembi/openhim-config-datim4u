@@ -19,10 +19,10 @@ address and for a username and password to use to import the config. To automate
 this you may supply the value before installing the package. Eg.:
 
 ```
-echo "openhim-config-<your_project> openhim-config/host string localhost" | debconf-set-selections
-echo "openhim-config-<your_project> openhim-config/port string 8080" | debconf-set-selections
-echo "openhim-config-<your_project> openhim-config/username string root@openhim.org" | debconf-set-selections
-echo "openhim-config-<your_project> openhim-config/password password openhim-password" | debconf-set-selections
+echo "openhim-config-datim-node openhim-config/host string localhost" | debconf-set-selections
+echo "openhim-config-datim-node openhim-config/port string 8080" | debconf-set-selections
+echo "openhim-config-datim-node openhim-config/username string root@openhim.org" | debconf-set-selections
+echo "openhim-config-datim-node openhim-config/password password openhim-password" | debconf-set-selections
 ```
 
 After installing the package
