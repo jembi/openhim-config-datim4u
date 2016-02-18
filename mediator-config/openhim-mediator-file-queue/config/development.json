@@ -1,0 +1,13 @@
+{
+  "port": 4002,
+  "log_level": "debug",
+  "endpoints": [
+    {
+      "name": "test",
+      "path": "/test",
+      "url": "http://localhost:9999",
+      "updateTx": true,
+      "forwardMetadata": true
+    }
+  ]
+}

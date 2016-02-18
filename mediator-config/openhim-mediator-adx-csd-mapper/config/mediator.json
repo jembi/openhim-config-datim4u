@@ -1,0 +1,86 @@
+{
+  "urn": "urn:uuid:70508e92-3637-4344-9a47-d46b9b373fb4",
+  "version": "0.5.0",
+  "name": "adx-csd-mapper",
+  "description": "Maps orgUnits in an ADX message to an alternate ID looked up in a CSD InfoManager",
+  "defaultChannelConfig": [],
+  "endpoints": [
+    {
+      "name": "ADX csd mapper mediator",
+      "host": "localhost",
+      "path": "",
+      "port": "8533",
+      "primary": true,
+      "type": "http"
+    }
+  ],
+  "configDefs": [
+    {
+      "param": "upstream",
+      "displayName": "Upstream Server",
+      "description": "The upstream server to which modified requests should be sent.",
+      "type": "struct",
+      "template": [
+        {
+          "param": "host",
+          "displayName": "Host",
+          "type": "string"
+        },
+        {
+          "param": "port",
+          "displayName": "Port",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "param": "infoman",
+      "displayName": "InfoMan Server",
+      "description": "The InfoMan server which contains the mappings from otherID to entityID.",
+      "type": "struct",
+      "template": [
+        {
+          "param": "host",
+          "displayName": "Host",
+          "type": "string"
+        },
+        {
+          "param": "port",
+          "displayName": "Port",
+          "type": "number"
+        },
+        {
+          "param": "path",
+          "displayName": "Path",
+          "type": "string"
+        },
+        {
+          "param": "directory",
+          "displayName": "Search directory",
+          "description": "The directory to search",
+          "type": "option",
+          "values": ["facility", "provider", "organization", "service"]
+        }
+      ]
+    },
+    {
+      "param": "verifyOnly",
+      "displayName": "Verify Only",
+      "description": "If true, this mediator will only verify that the IDs in the ADX message exist in the InfoManager. It will not do any transformation of the ADX message.",
+      "type": "bool"
+    }
+  ],
+  "config": {
+    "upstream": {
+      "port":3000,
+      "host":"localhost"
+    },
+    "infoman": {
+      "path":"/CSD/csr/datim-small/careServicesRequest/urn:ihe:iti:csd:2014:stored-function:organization-search",
+      "port":8984,
+      "host":"localhost",
+      "directory": "organization"
+    },
+    "verifyOnly": false
+  }
+}

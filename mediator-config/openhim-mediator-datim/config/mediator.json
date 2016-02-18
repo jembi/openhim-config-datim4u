@@ -1,0 +1,79 @@
+{
+  "urn": "urn:uuid:146c9090-6044-11e5-9d1f-218790ee18c9",
+  "version": "0.4.0",
+  "name": "datim",
+  "description": "Forwards ADX messges and polls for import status then forwards the final response",
+  "defaultChannelConfig": [
+    {
+      "name": "datim",
+      "urlPattern": "/datim-adx/.*",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "DATIM ADX Route",
+          "host": "localhost",
+          "path": "/datim-adx/.",
+          "port": "3000",
+          "primary": true,
+          "type": "http"
+        }
+      ],
+      "allow": ["admin"],
+      "type": "http"
+    }
+  ],
+  "endpoints": [
+    {
+      "name": "datim Route",
+      "host": "localhost",
+      "path": "/datim-adx/.*",
+      "port": "3000",
+      "primary": true,
+      "type": "http"
+    }
+  ],
+  "configDefs": [
+    {
+      "displayName": "Upstream URL",
+      "description": "The URL to use when forwarding messages (you may supply basic auth details in the URL if nesseccary)",
+      "param": "upstreamURL",
+      "type": "string"
+    },
+    {
+      "displayName": "Upstream task polling URL",
+      "description": "The URL to use when request task updates (only used if aync is true)",
+      "param": "upsteamTaskURL",
+      "type": "string"
+    },
+    {
+      "displayName": "Upstream async",
+      "description": "Whether to send the async parameter when forwarding messages",
+      "param": "upstreamAsync",
+      "type": "bool"
+    },
+    {
+      "displayName": "Receiver URL",
+      "description": "The URL to use for the system that receivers the final response",
+      "param": "receiverURL",
+      "type": "string"
+    },
+    {
+      "displayName": "Task polling interval",
+      "description": "The interval in which to poll for import taks updates",
+      "param": "pollingInterval",
+      "type": "number"
+    }
+  ],
+  "config": {
+    "upstreamURL": "http://localhost:8081/demo/ohie/dataValueSets?dataElementIdScheme=code&orgUnitIdScheme=code",
+    "upsteamTaskURL": "http://localhost:8081/demo/api/system/tasks/DATAVALUE_IMPORT",
+    "upstreamAsync": false,
+    "receiverURL": "http://localhost:8082/task",
+    "pollingInterval": 1000
+  }
+}
