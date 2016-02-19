@@ -19,7 +19,7 @@ PASSWD=$RET
 
 echo "Configured for OpenHIM server $HOST:$PORT using user $USER"
 
-# inject serer details
+# inject server details
 sudo sed -i -r 's/server=.*/server="'$HOST:$PORT'"/' load-initial-data.sh
 sudo sed -i -r 's/username=.*/username="'$USER'"/' load-initial-data.sh
 sudo sed -i -r 's/pass=.*/pass="'$PASSWD'"/' load-initial-data.sh
