@@ -4,13 +4,26 @@ OpenHIM config package - for DATIM Node
 This repo allows you to create a debian package that will automatically
 configure the openhim-core server installed by the openhim-core debian package.
 
-This package will also install the two mediators required by the DATIM project:
-the file-queue mediator which allows async operations of the ADX request and the
-DATIM mediator which orchestrates the DATIM transaction.
+This package will also install the three mediators required by the DATIM project:
+the file-queue mediator which allows async operations of the ADX request, the
+DATIM mediator which orchestrates the DATIM transaction and a site mapping
+mediator which reconciles local site IDs to global site IDs using the
+Inter Linked Registry that contains site details.
 
 It has been configured specifically for the DATIM project. If you would like to
 create a config package for the OpenHIM for your own project, then
 [see here](https://github.com/jembi/openhim-config-pkg).
+
+When the config package is installed it will ask the user the openhim server
+address and for a username and password to use to import the config. To automate
+this you may supply the value before installing the package. Eg.:
+
+```
+echo "openhim-config-datim-node openhim-config/host string localhost" | debconf-set-selections
+echo "openhim-config-datim-node openhim-config/port string 8080" | debconf-set-selections
+echo "openhim-config-datim-node openhim-config/username string root@openhim.org" | debconf-set-selections
+echo "openhim-config-datim-node openhim-config/password password openhim-password" | debconf-set-selections
+```
 
 After installing the package
 ----------------------------
@@ -37,6 +50,7 @@ After the package is installed the user must manually set the following:
 * The /tls folder of the openhim DATIM mediator will need to be updated with its
   proper cert and key file and a ca file for the Global IL.
 * The CSD channel's route will need to be updated to point to the Global IL.
+* The mapping mediator will need to be configured with the location of the ILR.
 
 Building the package
 --------------------
