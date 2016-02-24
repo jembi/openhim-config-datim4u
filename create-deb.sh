@@ -13,7 +13,7 @@ echo "Targets: $TARGETS"
 cd $HOME
 
 PKG=openhim-config-datim-node
-PKGVER=0.2.0
+PKGVER=0.2.1
 
 echo -n "Would you like to upload the build(s) to Launchpad? [y/N] "
 read UPLOAD
@@ -42,6 +42,9 @@ if [[ "$UPLOAD" == "y" || "$UPLOAD" == "Y" ]];  then
 fi
 
 BUILDDIR=$HOME/builds
+echo -n "Clearing out previous builds... "
+rm -rf $BUILDDIR
+echo "Done."
 
 for TARGET in "${TARGETS[@]}"
 do

@@ -122,6 +122,104 @@
         "metadata"
       ],
       "type": "http"
+    },
+    {
+      "requestBody": true,
+      "responseBody": true,
+      "name": "AUTO Update Mechanisms",
+      "urlPattern": "^/mechanisms$",
+      "pollingSchedule": "10 4 * * *",
+      "tcpHost": null,
+      "tcpPort": null,
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentJson": null,
+      "matchContentValue": null,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "Mechanisms update",
+          "secured": false,
+          "host": "localhost",
+          "port": 1777,
+          "path": "/",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "type": "http"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "openinfoman"
+      ],
+      "type": "polling"
+    },
+    {
+      "matchContentJson": null,
+      "matchContentRegex": null,
+      "matchContentValue": null,
+      "matchContentXpath": null,
+      "name": "AUTO Update metadata",
+      "pollingSchedule": "0 4 * * *",
+      "requestBody": true,
+      "responseBody": true,
+      "tcpHost": null,
+      "tcpPort": null,
+      "urlPattern": "^/datim-global$",
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "Update DATIM global doc",
+          "secured": true,
+          "host": "localhost",
+          "port": 443,
+          "path": "/ILR/CSD/pollService/directory/DATIM-Global/update_cache",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "type": "http"
+        },
+        {
+          "name": "Update FactsInfo doc",
+          "secured": true,
+          "host": "localhost",
+          "port": 443,
+          "path": "/ILR/CSD/pollService/directory/DATIM-FactsInfo/update_cache",
+          "pathTransform": "",
+          "primary": false,
+          "username": "",
+          "password": "",
+          "type": "http"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "openinfoman"
+      ],
+      "type": "polling"
     }
   ]
 }

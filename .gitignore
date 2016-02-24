@@ -1,4 +1,3 @@
 builds
 .vagrant
-Vagrantfile
 targets/trusty/usr/share
