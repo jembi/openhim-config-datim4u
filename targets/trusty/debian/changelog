@@ -1,3 +1,15 @@
+openhim-config-datim-node (0.2.2-9~trusty) trusty; urgency=medium
+
+  * Release Debian Build 0.2.2-9.
+
+ -- Ryan Crichton <ryan@jembi.org>  Thu, 03 Mar 2016 15:50:52 +0200
+
+openhim-config-datim-node (0.2.2-8~trusty) trusty; urgency=medium
+
+  * Release Debian Build 0.2.2-8.
+
+ -- Ryan Crichton <ryan@jembi.org>  Thu, 03 Mar 2016 14:58:08 +0200
+
 openhim-config-datim-node (0.2.1-7~trusty) trusty; urgency=medium
 
   * Release Debian Build 0.2.1-7.
