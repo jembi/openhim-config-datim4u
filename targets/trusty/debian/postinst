@@ -24,6 +24,11 @@ sudo sed -i -r 's/server=.*/server="'$HOST:$PORT'"/' load-initial-data.sh
 sudo sed -i -r 's/username=.*/username="'$USER'"/' load-initial-data.sh
 sudo sed -i -r 's/pass=.*/pass="'$PASSWD'"/' load-initial-data.sh
 
+# inject server to mediator config
+sudo sed -i -r 's/localhost:8080/'$HOST:$PORT'/' /usr/share/openhim-mediator-adx-csd-mapper/config/config.json
+sudo sed -i -r 's/localhost:8080/'$HOST:$PORT'/' /usr/share/openhim-mediator-datim/config/config.json
+sudo sed -i -r 's/localhost:8080/'$HOST:$PORT'/' /usr/share/openhim-mediator-file-queue/config/config.json
+
 ./load-initial-data.sh data.json
 
 sudo -u openhim /bin/bash /etc/openhim/install_node_4.sh
@@ -32,6 +37,9 @@ chown -R openhim:openhim /usr/share/openhim-mediator-file-queue
 chown -R openhim:openhim /usr/share/openhim-mediator-datim
 chown -R openhim:openhim /usr/share/openhim-mediator-adx-csd-mapper
 
-start openhim-mediator-file-queue
-start openhim-mediator-datim
-start openhim-mediator-adx-csd-mapper
+stop openhim-mediator-file-queue || true
+stop openhim-mediator-datim || true
+stop openhim-mediator-adx-csd-mapper || true
+start openhim-mediator-file-queue || true
+start openhim-mediator-datim || true
+start openhim-mediator-adx-csd-mapper || true
