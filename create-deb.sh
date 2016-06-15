@@ -13,7 +13,7 @@ echo "Targets: $TARGETS"
 cd $HOME
 
 PKG=openhim-config-datim-node
-PKGVER=0.2.2
+PKGVER=0.3.0
 
 echo -n "Would you like to upload the build(s) to Launchpad? [y/N] "
 read UPLOAD

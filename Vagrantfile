@@ -49,7 +49,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
     # vb.gui = true
-  
+
     # Customize the amount of memory on the VM:
     vb.memory = "1024"
   end
@@ -69,6 +69,8 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     sudo add-apt-repository -y ppa:openhie/release
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+    sudo echo 'deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse' | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
     sudo apt-get update
     echo "openhim-console openhim-console/selecthost string localhost" | debconf-set-selections
     echo "openhim-console openhim-console/selectport string 8080" | debconf-set-selections

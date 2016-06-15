@@ -46,7 +46,7 @@
       "name": "Node ILR",
       "pollingSchedule": null,
       "requestBody": true,
-      "responseBody": true,
+      "responseBody": false,
       "tcpHost": null,
       "tcpPort": null,
       "urlPattern": "^/node/ilr/CSD($|/.*)",
@@ -63,11 +63,11 @@
       "routes": [
         {
           "name": "Node ILR",
-          "secured": true,
-          "host": "test-node-ohie.datim.org",
-          "port": 443,
+          "secured": false,
+          "host": "localhost",
+          "port": 8984,
           "path": "",
-          "pathTransform": "s/node\\/ilr/ILR/",
+          "pathTransform": "s/node\\/ilr\\///",
           "primary": true,
           "username": "",
           "password": "",
@@ -90,7 +90,7 @@
       "name": "Global ILR",
       "pollingSchedule": null,
       "requestBody": true,
-      "responseBody": true,
+      "responseBody": false,
       "tcpHost": null,
       "tcpPort": null,
       "urlPattern": "^/global/ilr/CSD($|/.*)",
@@ -154,10 +154,10 @@
           "username": "",
           "primary": true,
           "pathTransform": "",
-          "path": "/ILR/CSD/pollService/directory/DATIM-FactsInfo/update_cache",
-          "port": 443,
-          "host": "test-node-ohie.datim.org",
-          "secured": true,
+          "path": "/CSD/pollService/directory/DATIM-FactsInfo/update_cache",
+          "port": 8984,
+          "host": "localhost",
+          "secured": false,
           "name": "Update FactsInfo doc",
           "type": "http"
         }
@@ -174,7 +174,7 @@
       "matchContentRegex": null,
       "matchContentValue": null,
       "matchContentXpath": null,
-      "name": "AUTO Update Node ILR DATIM-Global document from GLobal",
+      "name": "AUTO Update Node ILR DATIM-Global document from Global",
       "pollingSchedule": "0 6 * * *",
       "requestBody": true,
       "responseBody": true,
@@ -197,10 +197,10 @@
           "username": "",
           "primary": true,
           "pathTransform": "",
-          "path": "/ILR/CSD/pollService/directory/DATIM-Global/update_cache",
-          "port": 443,
-          "host": "test-node-ohie.datim.org",
-          "secured": true,
+          "path": "/CSD/pollService/directory/DATIM-Global/update_cache",
+          "port": 8984,
+          "host": "localhost",
+          "secured": false,
           "name": "Update DATIM global doc",
           "type": "http"
         }
@@ -296,6 +296,49 @@
         "exporter"
       ],
       "type": "http"
+    },
+    {
+      "matchContentJson": null,
+      "matchContentRegex": null,
+      "matchContentValue": null,
+      "matchContentXpath": null,
+      "name": "AUTO Merge DATIM-Map with DATIM-Global document",
+      "pollingSchedule": "30 5 * * *",
+      "requestBody": true,
+      "responseBody": true,
+      "tcpHost": null,
+      "tcpPort": null,
+      "urlPattern": "^/datim-mapping-merge$",
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "Trigger merge",
+          "secured": false,
+          "host": "localhost",
+          "port": 8984,
+          "path": "/CSD/csr/DATIM-Map/careServicesRequest/urn:openhie.org:openinfoman:identifier_merge/adapter/merge?merge=DATIM-Global",
+          "pathTransform": "",
+          "primary": true,
+          "username": "",
+          "password": "",
+          "type": "http"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [
+        "openinfoman"
+      ],
+      "type": "polling"
     }
   ]
 }

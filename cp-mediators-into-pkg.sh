@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-SRCDIR="/home/ryan/git"
-
 mkdir -p targets/trusty/usr/share
 rm -rf targets/trusty/usr/share/*
 
