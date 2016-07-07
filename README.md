@@ -58,5 +58,11 @@ Building the package
 To copy in the mediators edit and run `./cp-mediators-into-pkg.sh`. You will have
 to setup their config for a DATIM environment.
 
+You will need the following packages installed to successfully run the packaging:
+`devscripts`, `debhelper` and `python-bzrlib`. You will also need to symlink your
+`.gnupg` folder to the project's root directory `ln -s ~/.gnupg/` if you are
+uploading to launchpad. You will also need to setup your launchpad pgp keys and
+ssh keys before hand.
+
 Execute `.create-deb.sh` to create the package. This script will ask you if you
 want to upload to launchpad or just create a .deb file.
