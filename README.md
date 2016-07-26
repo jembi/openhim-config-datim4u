@@ -10,6 +10,12 @@ DATIM mediator which orchestrates the DATIM transaction and a site mapping
 mediator which reconciles local site IDs to global site IDs using the
 Inter Linked Registry that contains site details.
 
+The mediators are setup so that a request flows through them in this order:
+
+```
+file-queue -> adx-mapper -> datim
+```
+
 It has been configured specifically for the DATIM project. If you would like to
 create a config package for the OpenHIM for your own project, then
 [see here](https://github.com/jembi/openhim-config-pkg).
@@ -57,12 +63,6 @@ Building the package
 
 To copy in the mediators edit and run `./cp-mediators-into-pkg.sh`. You will have
 to setup their config for a DATIM environment.
-
-You will need the following packages installed to successfully run the packaging:
-`devscripts`, `debhelper` and `python-bzrlib`. You will also need to symlink your
-`.gnupg` folder to the project's root directory `ln -s ~/.gnupg/` if you are
-uploading to launchpad. You will also need to setup your launchpad pgp keys and
-ssh keys before hand.
 
 Execute `.create-deb.sh` to create the package. This script will ask you if you
 want to upload to launchpad or just create a .deb file.
