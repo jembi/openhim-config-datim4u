@@ -74,11 +74,11 @@ Vagrant.configure(2) do |config|
     sudo apt-get update
     echo "openhim-console openhim-console/selecthost string localhost" | debconf-set-selections
     echo "openhim-console openhim-console/selectport string 8080" | debconf-set-selections
-    echo "openhim-config-datim-node openhim-config/host string localhost" | debconf-set-selections
-    echo "openhim-config-datim-node openhim-config/port string 8080" | debconf-set-selections
-    echo "openhim-config-datim-node openhim-config/username string root@openhim.org" | debconf-set-selections
-    echo "openhim-config-datim-node openhim-config/password password openhim-password" | debconf-set-selections
+    echo "openhim-config-datim4u openhim-config/host string localhost" | debconf-set-selections
+    echo "openhim-config-datim4u openhim-config/port string 8080" | debconf-set-selections
+    echo "openhim-config-datim4u openhim-config/username string root@openhim.org" | debconf-set-selections
+    echo "openhim-config-datim4u openhim-config/password password openhim-password" | debconf-set-selections
     sudo apt-get install -y openhim-core-js openhim-console
-    sudo dpkg -i /vagrant/builds/openhim-config-datim-node_*.deb
+    sudo dpkg -i /vagrant/builds/openhim-config-datim4u_*.deb
   SHELL
 end

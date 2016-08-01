@@ -174,7 +174,7 @@
       "matchContentRegex": null,
       "matchContentValue": null,
       "matchContentXpath": null,
-      "name": "AUTO Update Node ILR DATIM-Global document from Global",
+      "name": "AUTO Update Node ILR OU-Extract document from Global",
       "pollingSchedule": "0 6 * * *",
       "requestBody": true,
       "responseBody": true,
@@ -197,7 +197,7 @@
           "username": "",
           "primary": true,
           "pathTransform": "",
-          "path": "/CSD/pollService/directory/DATIM-Global/update_cache",
+          "path": "/CSD/pollService/directory/OU-Extract/update_cache",
           "port": 8984,
           "host": "localhost",
           "secured": false,
@@ -302,13 +302,13 @@
       "matchContentRegex": null,
       "matchContentValue": null,
       "matchContentXpath": null,
-      "name": "AUTO Merge DATIM-Map with DATIM-Global document",
-      "pollingSchedule": "30 5 * * *",
+      "name": "AUTO Trigger update of locally managed sites to global",
+      "pollingSchedule": "0 4 * * *",
       "requestBody": true,
       "responseBody": true,
       "tcpHost": null,
       "tcpPort": null,
-      "urlPattern": "^/datim-mapping-merge$",
+      "urlPattern": "^/trigger-site-update-for-global$",
       "rewriteUrlsConfig": [],
       "addAutoRewriteRules": true,
       "rewriteUrls": false,
@@ -321,22 +321,22 @@
       "matchContentTypes": [],
       "routes": [
         {
-          "name": "Trigger merge",
-          "secured": false,
-          "host": "localhost",
-          "port": 8984,
-          "path": "/CSD/csr/DATIM-Map/careServicesRequest/urn:openhie.org:openinfoman:identifier_merge/adapter/merge?merge=DATIM-Global",
-          "pathTransform": "",
-          "primary": true,
-          "username": "",
           "password": "",
+          "username": "",
+          "primary": true,
+          "pathTransform": "",
+          "path": "/update",
+          "port": 50789,
+          "host": "localhost",
+          "secured": false,
+          "name": "Trigger update mediator",
           "type": "http"
         }
       ],
       "authType": "private",
       "whitelist": [],
       "allow": [
-        "openinfoman"
+        "adx-adaptor"
       ],
       "type": "polling"
     }

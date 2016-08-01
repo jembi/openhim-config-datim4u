@@ -1,4 +1,4 @@
-Source: openhim-config-datim-node
+Source: openhim-config-datim4u
 Maintainer: Ryan Crichton <ryan@jembi.org>
 Section: web
 Priority: optional
@@ -7,9 +7,9 @@ Build-Depends: debhelper (>= 7)
 Homepage: http://www.openhim.org/
 
 
-Package: openhim-config-datim-node
+Package: openhim-config-datim4u
 Architecture: amd64
 Depends: openhim-core-js, curl, jq
 Recommends:
-Description: OpenHIM Config for datim-node
+Description: OpenHIM Config for datim4u
  Automatically configures the openhim-core server installed by the openhim-core debian package.

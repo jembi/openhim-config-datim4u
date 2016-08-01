@@ -84,7 +84,7 @@
         {
           "name": "datim",
           "path": "/datim",
-          "url": "http://localhost:8533/",
+          "url": "http://localhost:3000/",
           "paused": false,
           "parallel": 1,
           "updateTx": true,
