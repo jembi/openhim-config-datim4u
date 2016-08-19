@@ -30,6 +30,7 @@ sudo sed -i -r 's/pass=.*/pass="'$PASSWD'"/' load-initial-data.sh
 # inject server to mediator config
 sudo sed -i -r 's/localhost:8080/'$HOST:$PORT'/' /usr/share/openhim-mediator-datim/config/config.json
 sudo sed -i -r 's/localhost:8080/'$HOST:$PORT'/' /usr/share/openhim-mediator-file-queue/config/config.json
+sudo sed -i -r 's/localhost:8080/'$HOST:$PORT'/' /usr/share/openhim-mediator-shell-script/config/default.json
 
 ./load-initial-data.sh data.json
 
@@ -38,11 +39,16 @@ sudo -u openhim /bin/bash /etc/openhim/install_node_4.sh
 chown -R openhim:openhim /usr/share/openhim-mediator-file-queue
 chown -R openhim:openhim /usr/share/openhim-mediator-datim
 
+# Add openhim user to sudoers for so that the shell-script mediator can run sudo commands - is there a bettter way to do this...
+sudo adduser openhim sudo
+
 # restart OpenHIM for timeout to take effect
 restart openhim-core
 sleep 10
 
 stop openhim-mediator-file-queue || true
 stop openhim-mediator-datim || true
+stop openhim-mediator-shell-script || true
 start openhim-mediator-file-queue || true
 start openhim-mediator-datim || true
+start openhim-mediator-shell-script || true
