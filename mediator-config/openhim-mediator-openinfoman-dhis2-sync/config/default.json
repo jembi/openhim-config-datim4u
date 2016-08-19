@@ -8,8 +8,8 @@
   },
   "openhim": {
     "api" : {
-      "username": "root@openhim.org",
-      "password": "openhim-password",
+      "username": "mediators@openhim.org",
+      "password": "mediators-password",
       "apiURL": "https://localhost:8080",
       "trustSelfSigned": false
     }

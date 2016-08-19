@@ -30,6 +30,7 @@ sudo sed -i -r 's/pass=.*/pass="'$PASSWD'"/' load-initial-data.sh
 # inject server to mediator config
 sudo sed -i -r 's/localhost:8080/'$HOST:$PORT'/' /usr/share/openhim-mediator-datim/config/config.json
 sudo sed -i -r 's/localhost:8080/'$HOST:$PORT'/' /usr/share/openhim-mediator-file-queue/config/config.json
+sudo sed -i -r 's/localhost:8080/'$HOST:$PORT'/' /usr/share/openhim-mediator-openinfoman-dhis2-sync/config/default.json
 
 ./load-initial-data.sh data.json
 
@@ -44,5 +45,7 @@ sleep 10
 
 stop openhim-mediator-file-queue || true
 stop openhim-mediator-datim || true
+stop openhim-mediator-openinfoman-dhis2-sync || true
 start openhim-mediator-file-queue || true
 start openhim-mediator-datim || true
+start openhim-mediator-openinfoman-dhis2-sync || true
