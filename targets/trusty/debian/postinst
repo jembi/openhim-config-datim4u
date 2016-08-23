@@ -38,6 +38,7 @@ sudo -u openhim /bin/bash /etc/openhim/install_node_4.sh
 
 chown -R openhim:openhim /usr/share/openhim-mediator-file-queue
 chown -R openhim:openhim /usr/share/openhim-mediator-datim
+chown -R openhim:openhim /usr/share/openhim-mediator-openinfoman-dhis2-sync
 
 # restart OpenHIM for timeout to take effect
 restart openhim-core
