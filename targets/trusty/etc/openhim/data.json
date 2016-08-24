@@ -339,6 +339,47 @@
         "adx-adaptor"
       ],
       "type": "polling"
+    },
+    {
+      "matchContentJson": null,
+      "matchContentRegex": null,
+      "matchContentValue": null,
+      "matchContentXpath": null,
+      "name": "AUTO Trigger form assignment",
+      "pollingSchedule": "0 0 * * *",
+      "requestBody": true,
+      "responseBody": true,
+      "tcpHost": null,
+      "tcpPort": null,
+      "urlPattern": "^/trigger-form-assignment$",
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "password": "",
+          "username": "",
+          "primary": true,
+          "pathTransform": "",
+          "path": "/trigger-form-assignment",
+          "port": 5013,
+          "host": "localhost",
+          "secured": false,
+          "name": "Trigger shell-script mediator",
+          "type": "http"
+        }
+      ],
+      "authType": "private",
+      "whitelist": [],
+      "allow": [],
+      "type": "polling"
     }
   ]
 }
