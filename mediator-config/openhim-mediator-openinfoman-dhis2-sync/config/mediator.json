@@ -239,9 +239,9 @@
       "empty": false
     },
     "ilr-to-dhis": {
-      "ilr-url": "https://test2-global-ohie.datim.org:5000/ILR/CSD",
+      "ilr-url": "https://test2-global-ohie.datim.org:5000/global/ilr/CSD",
       "ilr-doc": "XXOU-Managed",
-      "dhis2-url": "https://localhost/dhis2",
+      "dhis2-url": "https://test2-global-ohie.datim.org:5000/dhis2",
       "dhis2-user": "admin",
       "dhis2-pass": "district",
       "dhis2-version": "v2.19"
@@ -249,7 +249,7 @@
     "sync-type": {
       "mode": "Both",
       "both-trigger-enabled": true,
-      "both-trigger-url": "https://test2-global-ohie.datim.org:5000/ILR/CSD/pollService/directory/DATIM-OU-XX/update_cache"
+      "both-trigger-url": "https://test2-global-ohie.datim.org:5000/global/ilr/CSD/pollService/directory/XXOU-Managed/update_cache"
     }
   }
 }

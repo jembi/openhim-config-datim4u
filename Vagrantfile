@@ -79,6 +79,7 @@ Vagrant.configure(2) do |config|
     echo "openhim-config-datim4u openhim-config/username string root@openhim.org" | debconf-set-selections
     echo "openhim-config-datim4u openhim-config/password password openhim-password" | debconf-set-selections
     sudo apt-get install -y openhim-core-js openhim-console
+    sudo apt-get install -y libxml2-utils jshon
     sudo dpkg -i /vagrant/builds/openhim-config-datim4u_*.deb
   SHELL
 end
