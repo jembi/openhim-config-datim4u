@@ -1,0 +1,17 @@
+{
+  "server": {
+    "hostname": "localhost",
+    "port": 5012
+  },
+  "logger": {
+    "level": "info"
+  },
+  "openhim": {
+    "api" : {
+      "username": "mediators@openhim.org",
+      "password": "mediators-password",
+      "apiURL": "https://localhost:8080",
+      "trustSelfSigned": false
+    }
+  }
+}

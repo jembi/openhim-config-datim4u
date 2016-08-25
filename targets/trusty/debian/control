@@ -9,7 +9,7 @@ Homepage: http://www.openhim.org/
 
 Package: openhim-config-datim4u
 Architecture: amd64
-Depends: openhim-core-js, curl, jq
+Depends: openhim-core-js, curl, jq, libxml2-utils, jshon
 Recommends:
 Description: OpenHIM Config for datim4u
  Automatically configures the openhim-core server installed by the openhim-core debian package.

@@ -4,15 +4,23 @@ OpenHIM config package - for DATIM4U
 This repo allows you to create a debian package that will automatically
 configure the openhim-core server installed by the openhim-core debian package.
 
-This package will also install two mediators required by the DATIM4U project:
-the file-queue mediator which allows async operations of the ADX request and the
-DATIM mediator which orchestrates the DATIM transaction.
+This package will also install three mediators required by the DATIM4U project:
+the file-queue mediator which allows async operations of the ADX request, the
+DATIM mediator which orchestrates the DATIM transaction and the openinfoman-dhis
+sync mediator which syncs site data between the openinfoman and dhis.
 
 The mediators are setup so that a request flows through them in this order:
 
 ```
 file-queue -> datim
 ```
+
+The site sync mediator is triggered separately via a polling channel and may also be
+triggered manually to ensure sites are insync. This mediator is setup to pull sites
+out of the datim4u node's DHIS2 instance, place them in the node ILR. It will then
+trigger a site update in the global ILR to pull the updated sites from the node.
+Then, it will extract the sites from the global ILR as DXF and import them into DHIS at
+global.
 
 It has been configured specifically for the DATIM project. If you would like to
 create a config package for the OpenHIM for your own project, then
