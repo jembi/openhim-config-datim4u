@@ -15,11 +15,11 @@ The mediators are setup so that a request flows through them in this order:
 file-queue -> datim
 ```
 
-The site sync mediator is trigger separately via a polling channel and may also be
-trigger manually to esnure sites are insync. This mediator is setup to pull sites
+The site sync mediator is triggered separately via a polling channel and may also be
+triggered manually to ensure sites are insync. This mediator is setup to pull sites
 out of the datim4u node's DHIS2 instance, place them in the node ILR. It will then
-trigger a chance update in the global ILR to pull the updated sites from the node.
-Then, it will extract the sites from the ILR as DXF and import them into DHIS at
+trigger a site update in the global ILR to pull the updated sites from the node.
+Then, it will extract the sites from the global ILR as DXF and import them into DHIS at
 global.
 
 It has been configured specifically for the DATIM project. If you would like to
