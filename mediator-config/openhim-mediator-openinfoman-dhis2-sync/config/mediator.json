@@ -223,7 +223,7 @@
   ],
   "config": {
     "dhis-to-ilr": {
-      "ilr-url": "http://localhost:8984/ILR/CSD",
+      "ilr-url": "http://localhost:8984/CSD",
       "ilr-doc": "XXOU-Managed",
       "dhis2-url": "https://localhost/dhis2",
       "dhis2-user": "admin",
