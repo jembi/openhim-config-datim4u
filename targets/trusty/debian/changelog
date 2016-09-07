@@ -1,3 +1,9 @@
+openhim-config-datim4u (0.2.3-5~trusty) trusty; urgency=medium
+
+  * Release Debian Build 0.2.3-5.
+
+ -- Ryan Crichton <ryan@jembi.org>  Thu, 01 Sep 2016 11:21:16 +0200
+
 openhim-config-datim4u (0.2.2-4~trusty) trusty; urgency=medium
 
   * Release Debian Build 0.2.2-4.
