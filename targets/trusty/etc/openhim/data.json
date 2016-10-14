@@ -345,7 +345,7 @@
       "matchContentRegex": null,
       "matchContentValue": null,
       "matchContentXpath": null,
-      "name": "AUTO Trigger form assignment",
+      "name": "AUTO Trigger Dataset Assignment",
       "pollingSchedule": "0 0 * * *",
       "requestBody": true,
       "responseBody": true,
