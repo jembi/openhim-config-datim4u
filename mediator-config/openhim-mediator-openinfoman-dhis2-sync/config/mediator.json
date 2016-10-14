@@ -249,7 +249,7 @@
       "dousers": true,
       "doservices": true,
       "ignorecerts": true,
-      "levels": "(4 5 6)",
+      "levels": "",
       "groupcodes": "('COMMUNITY' 'FACILITY' 'COUNTRY' 'COP_PRIORITAZATION_SNU' 'OUSCOUNTRIES')",
       "reset": false,
       "publishfull": false,
