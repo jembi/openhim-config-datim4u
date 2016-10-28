@@ -3,30 +3,7 @@
   "version": "0.4.0",
   "name": "datim",
   "description": "Forwards ADX messges and polls for import status then forwards the final response",
-  "defaultChannelConfig": [
-    {
-      "name": "datim",
-      "urlPattern": "/datim-adx/.*",
-      "alerts": [],
-      "txRerunAcl": [],
-      "txViewFullAcl": [],
-      "txViewAcl": [],
-      "properties": [],
-      "matchContentTypes": [],
-      "routes": [
-        {
-          "name": "DATIM ADX Route",
-          "host": "localhost",
-          "path": "/datim-adx/.",
-          "port": "3000",
-          "primary": true,
-          "type": "http"
-        }
-      ],
-      "allow": ["admin"],
-      "type": "http"
-    }
-  ],
+  "defaultChannelConfig": [],
   "endpoints": [
     {
       "name": "datim Route",
