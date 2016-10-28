@@ -41,8 +41,9 @@ chown -R openhim:openhim /usr/share/openhim-mediator-file-queue
 chown -R openhim:openhim /usr/share/openhim-mediator-datim
 chown -R openhim:openhim /usr/share/openhim-mediator-openinfoman-dhis2-sync
 
-# Add openhim user to sudoers for so that the shell-script mediator can run sudo commands - is there a bettter way to do this...
-sudo adduser openhim sudo
+# Allow the openhim user to run psql as the postgres user without a password
+permission='openhim ALL=(postgres) NOPASSWD: /usr/bin/psql'
+sudo grep -q -F "$permission" /etc/sudoers || (echo "$permission" | sudo tee -a /etc/sudoers > /dev/null)
 
 # restart OpenHIM for timeout to take effect
 restart openhim-core
